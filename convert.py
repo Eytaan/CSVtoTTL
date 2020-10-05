@@ -8,14 +8,11 @@ input_file = list(csv.reader(open("data.csv")))
 subjectsClassName = "Montagne"
 #------------------------------------------------------------------------------------------------------------------
 
+#a=input("Saisir le numéro de la ligne contenant les titres du fichier csv: ")
 
-prefix = ("http∶//ex.org/data/")
+prefix = ("http∶//ex.org/pred/")
 # make a graph
 g = Graph()
-owl = Namespace("http://www.w3.org/2002/07/owl#")
-g.bind("owl", owl)
-rdf = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
-g.bind("rdf", rdf)
 ex = Namespace(prefix)
 g.bind("pred", ex)
 
@@ -26,10 +23,7 @@ for row in input_file:
 	 #add class to all if wanted
 	if subjectsClassName != "":
 		g.add(  (subj, URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), URIRef(prefix+subjectsClassName))  )
-		g.add(  (URIRef(prefix+subjectsClassName), URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#subClassOf"),URIRef("http://www.w3.org/2002/07/owl#Thing"))  )
-	else:
-		g.add(  (subj, URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"), URIRef("http://www.w3.org/2002/07/owl#Thing"))  )
-
+	
 	#First row
 	if rowIndex==0:
 		colIndex2 = 0
@@ -54,4 +48,4 @@ for row in input_file:
 			colIndex+=1
 	rowIndex+=1
 
-g.serialize(destination='example_output.ttl', format='turtle')
+g.serialize(destination='turtle.ttl', format='turtle')
