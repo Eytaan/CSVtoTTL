@@ -1,0 +1,16 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pred: <http∶//ex.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<Mont-Blanc> a pred:Montagne ;
+    pred:Altitude "4807" ;
+    pred:Massif "Alpes" .
+
+<Mont-Gris> a pred:Montagne ;
+    pred:Altitude "48307" ;
+    pred:Massif "AlpesGris" .
+
+<Montagne> a pred:Montagne .
+
+pred:Montagne rdf:subClassOf owl:Thing .
+
