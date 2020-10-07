@@ -1,0 +1,16 @@
+@prefix pred: <http∶//ex.org/pred/> .
+
+<MassifBlanc> a pred:Montagne ;
+    pred:AltitudeTest "4807" ;
+    pred:MassifTest "MassifBlanc" .
+
+<MassifGris> a pred:Montagne ;
+    pred:AltitudeTest "48307" ;
+    pred:MassifTest "MassifGris" .
+
+<MassifTest> a pred:Montagne .
+
+<MassifVert> a pred:Montagne ;
+    pred:AltitudeTest "48303" ;
+    pred:MassifTest "MassifVert" .
+
